@@ -1,0 +1,402 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FossTech - GitHub Workshop</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+        <style>
+            .dark-bg {
+                background-color: #0d1117;
+            }
+
+            .content-card {
+                background-color: #161b22;
+                border: 1px solid #30363d;
+            }
+
+            .terminal-text {
+                border-radius: 6px;
+                background-color: #0d1117;
+                font-family: monospace;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            @keyframes typing {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                25% {
+                    transform: translateY(-4px);
+                }
+
+                50% {
+                    transform: translateY(0px);
+                }
+
+                75% {
+                    transform: translateY(-4px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            @keyframes wave {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                25% {
+                    transform: rotate(20deg);
+                }
+
+                50% {
+                    transform: rotate(0deg);
+                }
+
+                75% {
+                    transform: rotate(20deg);
+                }
+
+                100% {
+                    transform: rotate(0deg);
+                }
+            }
+
+            .float {
+                animation: float 6s ease-in-out infinite;
+            }
+
+            .typing {
+                animation: typing 2s ease-in-out infinite;
+            }
+
+            .wave {
+                animation: wave 2s ease-in-out infinite;
+                transform-origin: 70% 70%;
+            }
+
+            .floating-students {
+                position: absolute;
+                z-index: -1;
+                opacity: 0.6;
+            }
+        </style>
+    </head>
+
+    <body class="dark-bg text-gray-300 min-h-screen overflow-x-hidden relative">
+        <!-- Animated Students in Background -->
+        <div class="floating-students left-0 top-20 float" style="animation-delay: -2s">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="30" r="20" fill="#4B5563" />
+                <rect x="30" y="50" width="40" height="40" rx="10" fill="#4B5563" />
+                <circle cx="40" cy="25" r="5" fill="#161b22" />
+                <circle cx="60" cy="25" r="5" fill="#161b22" />
+                <path d="M45 35 Q50 40 55 35" stroke="#161b22" stroke-width="2" class="wave" />
+            </svg>
+        </div>
+        <div class="floating-students right-0 top-40 float" style="animation-delay: -4s">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="30" r="20" fill="#4B5563" />
+                <rect x="30" y="50" width="40" height="40" rx="10" fill="#4B5563" />
+                <circle cx="40" cy="25" r="5" fill="#161b22" />
+                <circle cx="60" cy="25" r="5" fill="#161b22" />
+                <path d="M45 35 Q50 40 55 35" stroke="#161b22" stroke-width="2" />
+            </svg>
+        </div>
+
+        <header class="border-b border-gray-700 relative">
+            <div class="container mx-auto px-4 py-6">
+                <h1 class="text-4xl font-bold text-center text-white animate__animated animate__fadeIn">
+                    🌟 FossTech
+                </h1>
+                <p class="text-center text-blue-400 mt-2 animate__animated animate__fadeIn">
+                    in collaboration with Tech Prasad
+                </p>
+            </div>
+            <!-- Typing Animation -->
+            <div class="absolute right-10 top-20 typing">
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="30" r="20" fill="#6366F1" />
+                    <rect x="30" y="50" width="40" height="40" rx="10" fill="#6366F1" />
+                    <circle cx="40" cy="25" r="5" fill="white" />
+                    <circle cx="60" cy="25" r="5" fill="white" />
+                    <path d="M45 35 Q50 40 55 35" stroke="white" stroke-width="2" />
+                    <rect x="15" y="60" width="30" height="20" fill="#4F46E5" />
+                </svg>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-4 py-8 max-w-4xl relative">
+            <div class="content-card rounded-lg p-8 mb-8 animate__animated animate__fadeInUp">
+                <h2 class="text-3xl font-bold text-center text-white mb-6">
+                    Introduction to GitHub
+                </h2>
+
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-2xl">🗓</span>
+                        <div>
+                            <h3 class="font-semibold text-blue-300">Date</h3>
+                            <p class="text-white">16 November 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <span class="text-2xl">⏰</span>
+                        <div>
+                            <h3 class="font-semibold text-blue-300">Time</h3>
+                            <p class="text-white">2:00 PM to 4:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <span class="text-2xl">📍</span>
+                        <div>
+                            <h3 class="font-semibold text-blue-300">Venue</h3>
+                            <p class="text-white">I3 Lab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Students Animation -->
+            <div class="absolute left-0 -translate-x-1/2 top-1/2 float" style="animation-delay: -3s">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="40" r="25" fill="#4B5563" />
+                    <rect x="35" y="65" width="50" height="50" rx="10" fill="#4B5563" />
+                    <circle cx="48" cy="35" r="6" fill="#161b22" />
+                    <circle cx="72" cy="35" r="6" fill="#161b22" />
+                    <path d="M52 45 Q60 50 68 45" stroke="#161b22" stroke-width="2" />
+                    <rect x="85" y="30" width="30" height="20" fill="#4F46E5" class="typing" />
+                </svg>
+            </div>
+
+            <div class="content-card rounded-lg p-8 mb-8 animate__animated animate__fadeInUp">
+                <p class="text-lg leading-relaxed mb-6">
+                    Are you interested in learning how to collaborate on code, track changes, and build projects
+                    efficiently? Join us to discover the basics of GitHub, a powerful platform for developers and
+                    enthusiasts alike!
+                </p>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">💡 Topics Covered:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <span class="text-green-400">✓</span>
+                            <span>Setting up GitHub</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="text-green-400">✓</span>
+                            <span>Understanding repositories, commits, and branches</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="text-green-400">✓</span>
+                            <span>Collaborating on projects</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="terminal-text p-4">
+                    <p class="text-gray-300 mb-2">📋 Requirements:</p>
+                    <p class="text-gray-300">• Laptop with internet connection</p>
+                    <p class="text-gray-300">• Your curiosity to learn!</p>
+                </div>
+            </div>
+
+                <!-- Why GitHub? Section -->
+                <div class="content-card rounded-lg p-8 mb-8 animate__animated animate__fadeInUp">
+                    <p class="text-lg leading-relaxed mb-6">
+                        GitHub offers a variety of features that are beneficial for students, especially those interested in coding,
+                        collaboration, and contributing to open-source projects.
+                    </p>
+                
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-300">💡 Features:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span><strong>Version Control:</strong> Track changes in your code, collaborate seamlessly, and avoid
+                                    conflicts.</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span><strong>Open Source Contribution:</strong> Contribute to global open-source projects and improve
+                                    coding skills.</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span><strong>Portfolio Building:</strong> Showcase your projects and contributions on your GitHub
+                                    profile.</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span><strong>Collaboration:</strong> Work on team projects, share code, and review
+                                    contributions.</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span><strong>Learning Resources:</strong> Access free resources from GitHub to learn Git and other
+                                    development tools.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- What You’ll Learn Section -->
+                <div class="content-card rounded-lg p-8 mb-8 animate__animated animate__fadeInUp">
+                    <p class="text-lg leading-relaxed mb-6">
+                        Learn how to navigate GitHub and leverage its features for your development journey.
+                    </p>
+                
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-300">💡 What You’ll Learn:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span><strong>Git Basics:</strong> Learn the fundamentals of Git, including creating repositories,
+                                    committing changes, and pushing updates.</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span><strong>GitHub Features:</strong> Understand how to fork a repository, create branches, and make
+                                    pull requests.</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span><strong>Collaboration Skills:</strong> Discover how to collaborate with others on open-source
+                                    projects and manage team workflows.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- New Content 7 -->
+                <div class="content-card rounded-lg p-8 mb-8 animate__animated animate__fadeInUp">
+                    <p class="text-lg leading-relaxed mb-6">
+                        Are you interested in collaborating on open-source projects and contributing to repositories on GitHub? Join us
+                        to understand how our GitHub organization will help you work on internal projects, events, and collaborations.
+                    </p>
+                
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-300">💡 Topics Covered:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>Providing an invitation link to join the GitHub organization</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>Internal projects, events, and collaborations on GitHub</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- New Content 8 -->
+                <div class="content-card rounded-lg p-8 mb-8 animate__animated animate__fadeInUp">
+                    <p class="text-lg leading-relaxed mb-6">
+                        Hear from your peers who have learned GitHub and contributed to exciting open-source projects! Explore some of
+                        their success stories and find inspiration for your own journey.
+                    </p>
+                
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-300">💡 Success Stories:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>Testimonial: How seniors have benefited from GitHub</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>Example projects with links to their GitHub repositories</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- New Content 9 -->
+                <div class="content-card rounded-lg p-8 mb-8 animate__animated animate__fadeInUp">
+                    <p class="text-lg leading-relaxed mb-6">
+                        Get answers to some of the most frequently asked questions about GitHub. If you're unsure about how to get
+                        started, check out the FAQ section below.
+                    </p>
+                
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-300">💡 FAQs:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>What is GitHub?</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>Do I need to know programming to join?</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>How do I contribute to a project on GitHub?</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>What happens after I register?</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>What resources will be available for learning GitHub?</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            <div class="text-center mb-8">
+                <button
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105 animate__animated animate__pulse animate__infinite">
+                    Register Now 🚀
+                </button>
+                <p class="mt-4 text-gray-400">Bring your laptop and let's explore GitHub together!</p>
+            </div>
+
+            <!-- Waving Student Animation -->
+            <div class="absolute right-0 translate-x-1/2 bottom-0 float">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="40" r="25" fill="#6366F1" />
+                    <rect x="35" y="65" width="50" height="50" rx="10" fill="#6366F1" />
+                    <circle cx="48" cy="35" r="6" fill="white" />
+                    <circle cx="72" cy="35" r="6" fill="white" />
+                    <path d="M52 45 Q60 50 68 45" stroke="white" stroke-width="2" />
+                    <rect x="10" y="40" width="30" height="15" fill="#4F46E5" class="wave" />
+                </svg>
+            </div>
+            
+
+            
+        </main>
+
+        <footer class="border-t border-gray-700 mt-8">
+            <div class="container mx-auto px-4 py-6 text-center">
+                <p class="text-gray-400">Looking forward to seeing you all there! ✨</p>
+                <p class="mt-2 text-blue-400">Best regards,<br>FossTech Club Team</p>
+            </div>
+        </footer>
+    </body>
+
+    </html>
